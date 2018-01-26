@@ -13,7 +13,7 @@ public class DelayedCommand : MonoBehaviour
     {
     }
     public CommandEvent CommandEmmitter;
-    public int InputCommandDelay;
+    public float InputCommandDelay;
 
     public enum Command
     {
