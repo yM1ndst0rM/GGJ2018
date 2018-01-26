@@ -30,7 +30,7 @@ public class DelayedCommand : MonoBehaviour
         public Command Type { get; set; }
     }
 
-    private List<InputEvent> _inputs;
+    private List<InputEvent> _inputs = new List<InputEvent>();
     // Use this for initialization
     void Start () {
 		
