@@ -5,11 +5,11 @@ using UnityEngine;
 public class FireBullet : MonoBehaviour {
 
 	public GameObject bulletPrefab;
-	public Transform bulletSpawn;
+	public Transform hostTransform;
 
 	// Use this for initialization
 	void Start () {
-		Fire();
+		FireABullet();
 	}
 	
 	// Update is called once per frame
@@ -17,14 +17,11 @@ public class FireBullet : MonoBehaviour {
 		
 	}
 
-	void Fire() {
+	void FireABullet() {
 		var bullet = (GameObject)Instantiate (
 		    bulletPrefab,
-		    bulletSpawn.position,
-		    bulletSpawn.rotation);
-
-	    // Adding velocity
-	    bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6; // todo: link this to the player's rotation
+		    hostTransform.position,
+		    hostTransform.rotation);
 	}
 
 }
