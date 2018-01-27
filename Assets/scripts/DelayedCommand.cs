@@ -67,18 +67,18 @@ public class DelayedCommand : MonoBehaviour
 
 	    if (moveVec2.magnitude > 0)
 	    {
-	        _inputs.Add(new DirectionalInputEvent{CommandType = CommandType.MOVE, Timestamp = Time.time + InputCommandDelay, Param = moveVec2});
+	        _inputs.Add(new DirectionalInputEvent{CommandType = CommandType.MOVE, Timestamp = now + InputCommandDelay, Param = moveVec2});
 	    }
 
 	    if (aimVec2.magnitude > 0)
 	    {
-	        _inputs.Add(new DirectionalInputEvent { CommandType = CommandType.AIM, Timestamp = Time.time + InputCommandDelay, Param = aimVec2 });
+	        _inputs.Add(new DirectionalInputEvent { CommandType = CommandType.AIM, Timestamp = now + InputCommandDelay, Param = aimVec2 });
 	    }
 
 
         if (Input.GetButton("Fire1"))
 	    {
-	        _inputs.Add(new IntInputEvent { CommandType = CommandType.ATTACK, Timestamp = Time.time + InputCommandDelay, Param = 1 });
+	        _inputs.Add(new IntInputEvent { CommandType = CommandType.ATTACK, Timestamp = now + InputCommandDelay, Param = 1 });
 	    }
 
         foreach (var inputEvent in _inputs.Where(e => e.Timestamp < now))
