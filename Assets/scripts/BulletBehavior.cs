@@ -26,6 +26,10 @@ public class BulletBehavior : MonoBehaviour {
 	}
 
 	void Hit(GameObject target) {
+        PlayerHealth ph = target.GetComponent<PlayerHealth>();
+        if (!ph) return;
+
+        ph.DamagePlayer(1);
 		// todo: logic on the hit object
 	}
 
