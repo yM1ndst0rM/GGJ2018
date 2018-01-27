@@ -18,10 +18,12 @@ public class DelayedCommand : MonoBehaviour
     {
     }
 
+    public PlayerControlSchema.Player Player;
     public DirectionalCommandEvent MovementEmitter;
     public DirectionalCommandEvent AimEmitter;
     public AttackCommandEvent AttackEmitter;
     public float InputCommandDelay;
+    public float FireTriggerThreshold;
 
 
     public interface IInputEvent
@@ -57,10 +59,12 @@ public class DelayedCommand : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 	    var now = Time.time;
-	    var horizontal = Input.GetAxis("Horizontal");
-	    var vertical = Input.GetAxis("Vertical");
-	    var aimHorizontal = Input.GetAxis("Horizontal");
-        var aimVertical = Input.GetAxis("Vertical");
+	    var inp = PlayerControlSchema.Inp(Player);
+
+	    var horizontal = Input.GetAxis(inp.Move_HorizontalAxis);
+	    var vertical = Input.GetAxis(inp.Move_VerticalAxis);
+	    var aimHorizontal = Input.GetAxis(inp.Aim_HorizontalAxis);
+        var aimVertical = Input.GetAxis(inp.Aim_VerticalAxis);
 
 	    var moveVec2 = new Vector2(horizontal, vertical);
 	    var aimVec2 = new Vector2(aimHorizontal, aimVertical);
@@ -75,8 +79,7 @@ public class DelayedCommand : MonoBehaviour
 	        _inputs.Add(new DirectionalInputEvent { CommandType = CommandType.AIM, Timestamp = now + InputCommandDelay, Param = aimVec2 });
 	    }
 
-
-        if (Input.GetButton("Fire1"))
+        if (Input.GetAxis(inp.Fire1_Button) > FireTriggerThreshold)
 	    {
 	        _inputs.Add(new IntInputEvent { CommandType = CommandType.ATTACK, Timestamp = now + InputCommandDelay, Param = 1 });
 	    }
@@ -103,4 +106,6 @@ public class DelayedCommand : MonoBehaviour
         }
 	    _inputs.RemoveAll(e => e.Timestamp < now);
 	}
+
+
 }
