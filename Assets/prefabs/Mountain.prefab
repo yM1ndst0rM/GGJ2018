@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4255586365954268}
   - component: {fileID: 212355392378224570}
-  - component: {fileID: 61775917521210764}
+  - component: {fileID: 60384150219005804}
   m_Layer: 0
   m_Name: Mountain
   m_TagString: Mountain
@@ -35,14 +35,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1398223380890302}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.24, y: 1.23, z: -1}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: -7.344, y: -2.016, z: -1}
+  m_LocalScale: {x: 15, y: 15, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61775917521210764
-BoxCollider2D:
+--- !u!60 &60384150219005804
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -57,15 +57,26 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.64}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.0068445527, y: 0.26424053}
+      - {x: -0.04617704, y: 0.22651078}
+      - {x: -0.07537569, y: 0.1819365}
+      - {x: -0.09108519, y: 0.12787971}
+      - {x: -0.19000004, y: 0.0021702847}
+      - {x: -0.19325536, y: -0.05782978}
+      - {x: -0.19622701, y: -0.11839732}
+      - {x: -0.11674462, y: -0.17787974}
+      - {x: 0.14759599, y: -0.23136891}
+      - {x: 0.24514185, y: -0.15353914}
+      - {x: 0.17896491, y: -0.032220222}
+      - {x: 0.16410676, y: 0.07235409}
 --- !u!212 &212355392378224570
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -100,7 +111,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 163568a36525749de875a131de8040b3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5303ab82cc6a8634e82e466663750acf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
