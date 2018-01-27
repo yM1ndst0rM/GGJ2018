@@ -12,6 +12,12 @@ public class DelayedCommand : MonoBehaviour
     public class CommandEvent : UnityEvent<Command>
     {
     }
+
+    public KeyCode Up;
+    public KeyCode Down;
+    public KeyCode Left;
+    public KeyCode Right;
+    public KeyCode Attack;
     public CommandEvent CommandEmmitter;
     public float InputCommandDelay;
 
@@ -39,27 +45,27 @@ public class DelayedCommand : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 	    var now = Time.time;
-	    if (Input.GetKey(KeyCode.W))
+	    if (Input.GetKey(Up))
 	    {
 	        _inputs.Add(new InputEvent{Timestamp = now + InputCommandDelay, Type = Command.UP});
 	    }
 
-	    if (Input.GetKey(KeyCode.A))
+	    if (Input.GetKey(Left))
 	    {
 	        _inputs.Add(new InputEvent { Timestamp = now + InputCommandDelay, Type = Command.LEFT });
 	    }
 
-	    if (Input.GetKey(KeyCode.S))
+	    if (Input.GetKey(Down))
 	    {
 	        _inputs.Add(new InputEvent { Timestamp = now + InputCommandDelay, Type = Command.DOWN });
 	    }
 
-	    if (Input.GetKey(KeyCode.D))
+	    if (Input.GetKey(Right))
 	    {
 	        _inputs.Add(new InputEvent { Timestamp = now + InputCommandDelay, Type = Command.RIGHT });
 	    }
 
-	    if (Input.GetKey(KeyCode.Space))
+	    if (Input.GetKey(Attack))
 	    {
 	        _inputs.Add(new InputEvent { Timestamp = now + InputCommandDelay, Type = Command.ATTACK });
 	    }
