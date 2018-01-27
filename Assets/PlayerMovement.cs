@@ -21,7 +21,11 @@ public class PlayerMovement : MonoBehaviour {
 
         inputVector.Normalize();
         rb.velocity = inputVector * TRANSLATE_SPEED;
-        transform.up = inputVector;
+        if (inputVector.magnitude > 0)
+        {
+            transform.up = inputVector;
+        }
+
         inputVector.Set(0, 0);
     }
 
