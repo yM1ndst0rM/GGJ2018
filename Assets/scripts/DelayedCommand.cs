@@ -52,7 +52,7 @@ public class DelayedCommand : MonoBehaviour
     }
 
 
-    private List<IInputEvent> _inputs = new List<IInputEvent>();
+    private readonly List<IInputEvent> _inputs = new List<IInputEvent>();
 	
 	// Update is called once per frame
 	void Update () {
@@ -76,14 +76,14 @@ public class DelayedCommand : MonoBehaviour
 	    }
 
 
-        if (Input.GetKey("Fire1"))
+        if (Input.GetButton("Fire1"))
 	    {
 	        _inputs.Add(new IntInputEvent { CommandType = CommandType.ATTACK, Timestamp = Time.time + InputCommandDelay, Param = 1 });
 	    }
 
         foreach (var inputEvent in _inputs.Where(e => e.Timestamp < now))
         {
-            var directionalInputEvent = inputEvent as DirectionalInputEvent?;
+            var directionalInputEvent = inputEvent is DirectionalInputEvent ? (DirectionalInputEvent?) inputEvent: (DirectionalInputEvent?) null;
             if (directionalInputEvent.HasValue)
             {
                 if (directionalInputEvent.Value.CommandType == CommandType.MOVE)
@@ -95,13 +95,10 @@ public class DelayedCommand : MonoBehaviour
                 }
             }
 
-            var intInputEvent = inputEvent as IntInputEvent?;
-            if (intInputEvent.HasValue)
+            var intInputEvent = inputEvent is IntInputEvent ? (IntInputEvent?)inputEvent :(IntInputEvent?) null;
+            if (intInputEvent?.CommandType == CommandType.ATTACK)
             {
-                if (intInputEvent.Value.CommandType == CommandType.ATTACK)
-                {
-                    AttackEmitter.Invoke(intInputEvent.Value.Param);
-                }
+                AttackEmitter.Invoke(intInputEvent.Value.Param);
             }
         }
 	    _inputs.RemoveAll(e => e.Timestamp < now);
