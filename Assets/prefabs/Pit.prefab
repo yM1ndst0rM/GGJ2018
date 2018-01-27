@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4606598468795726}
   - component: {fileID: 212681297348437034}
-  - component: {fileID: 61141383219190964}
+  - component: {fileID: 60706328659734410}
   m_Layer: 0
   m_Name: Pit
   m_TagString: Pit
@@ -35,14 +35,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1936063101463116}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.49, y: 2.56, z: -1}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalPosition: {x: -2.02, y: 1.08, z: 0}
+  m_LocalScale: {x: 15, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61141383219190964
-BoxCollider2D:
+--- !u!60 &60706328659734410
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -57,15 +57,21 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.64}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.14819506, y: 0.14353715}
+      - {x: -0.23299648, y: 0.12794133}
+      - {x: -0.27317742, y: -0.028446628}
+      - {x: -0.14400706, y: -0.14346537}
+      - {x: -0.024007067, y: -0.17447598}
+      - {x: 0.11516322, y: -0.2458484}
+      - {x: 0.024439607, y: -0.05234567}
 --- !u!212 &212681297348437034
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -100,7 +106,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 163568a36525749de875a131de8040b3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2093625c34be19f4bb36afc92bd3c097, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
