@@ -215,6 +215,31 @@ Prefab:
       propertyPath: CommandEmmitter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 114842016992738450, guid: f74dd4c38a252294fbe0c8608567e3ec,
+        type: 2}
+      propertyPath: Up
+      value: 273
+      objectReference: {fileID: 0}
+    - target: {fileID: 114842016992738450, guid: f74dd4c38a252294fbe0c8608567e3ec,
+        type: 2}
+      propertyPath: Down
+      value: 274
+      objectReference: {fileID: 0}
+    - target: {fileID: 61439514654781748, guid: f74dd4c38a252294fbe0c8608567e3ec,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114842016992738450, guid: f74dd4c38a252294fbe0c8608567e3ec,
+        type: 2}
+      propertyPath: Left
+      value: 276
+      objectReference: {fileID: 0}
+    - target: {fileID: 114842016992738450, guid: f74dd4c38a252294fbe0c8608567e3ec,
+        type: 2}
+      propertyPath: Right
+      value: 275
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f74dd4c38a252294fbe0c8608567e3ec, type: 2}
   m_IsPrefabParent: 0

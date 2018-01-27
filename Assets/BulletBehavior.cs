@@ -18,6 +18,10 @@ public class BulletBehavior : MonoBehaviour {
 		
 	}
 
+	void OnTriggerEnter2D(Collider2D collider) {
+		
+	}
+
 	void InitializeRigidBody() {
 		rigidBody = GetComponent<Rigidbody2D>();
 	}
