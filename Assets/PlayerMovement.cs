@@ -19,8 +19,9 @@ public class PlayerMovement : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
+        inputVector.Normalize();
         rb.velocity = inputVector * TRANSLATE_SPEED;
-
+        transform.up = inputVector;
         inputVector.Set(0, 0);
     }
 

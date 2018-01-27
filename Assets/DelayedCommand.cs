@@ -37,10 +37,6 @@ public class DelayedCommand : MonoBehaviour
     }
 
     private List<InputEvent> _inputs = new List<InputEvent>();
-    // Use this for initialization
-    void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {
