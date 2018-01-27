@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private Rigidbody2D rb;
 
-    private float TRANSLATE_SPEED = 10;
+    public float TRANSLATE_SPEED = 10;
 
     private Vector2 inputVector;
 
