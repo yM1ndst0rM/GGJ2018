@@ -26,7 +26,8 @@ public class FireBullet : MonoBehaviour {
 	}
 
 	public void FireABullet() {
-		Instantiate(bulletPrefab, this.transform.position, this.transform.rotation);
+		var bullet = Instantiate(bulletPrefab, this.transform.position, this.transform.rotation);
+		bullet.name = bullet.name + '#' + gameObject.tag;
 		lastShotAt = Time.time;
 	}
 

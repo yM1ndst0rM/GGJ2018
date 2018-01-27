@@ -19,7 +19,14 @@ public class BulletBehavior : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
-		
+		if (collider.gameObject.name.Contains("Player") && !gameObject.name.Contains(collider.gameObject.tag)) {
+			Hit(collider.gameObject);
+			Destroy(gameObject);
+		}
+	}
+
+	void Hit(GameObject target) {
+		// todo: logic on the hit object
 	}
 
 	void InitializeRigidBody() {
