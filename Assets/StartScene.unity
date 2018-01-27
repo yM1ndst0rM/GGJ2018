@@ -402,6 +402,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114842016992738450, guid: f74dd4c38a252294fbe0c8608567e3ec,
+        type: 2}
+      propertyPath: InputCommandDelay
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f74dd4c38a252294fbe0c8608567e3ec, type: 2}
   m_IsPrefabParent: 0
@@ -691,6 +696,21 @@ Prefab:
         type: 2}
       propertyPath: m_Color.b
       value: 0.46206903
+      objectReference: {fileID: 0}
+    - target: {fileID: 114842016992738450, guid: f74dd4c38a252294fbe0c8608567e3ec,
+        type: 2}
+      propertyPath: Player
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114842016992738450, guid: f74dd4c38a252294fbe0c8608567e3ec,
+        type: 2}
+      propertyPath: FireTriggerThreshold
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114842016992738450, guid: f74dd4c38a252294fbe0c8608567e3ec,
+        type: 2}
+      propertyPath: InputCommandDelay
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f74dd4c38a252294fbe0c8608567e3ec, type: 2}
