@@ -29,16 +29,16 @@ public class PlayerMovement : MonoBehaviour {
         switch (c)
         {
             case DelayedCommand.Command.UP:
-                inputVector.y = 1;
+                inputVector.y += 1;
                 break;
             case DelayedCommand.Command.DOWN:
-                inputVector.y = -1;
+                inputVector.y += -1;
                 break;
             case DelayedCommand.Command.LEFT:
-                inputVector.x = -1;
+                inputVector.x += -1;
                 break;
             case DelayedCommand.Command.RIGHT:
-                inputVector.x = 1;
+                inputVector.x += 1;
                 break;
             case DelayedCommand.Command.ATTACK:
                 //empty
