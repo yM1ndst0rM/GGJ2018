@@ -27,7 +27,7 @@ public class PlayerControlSchema
             case Player.P4:
                 return Player4;
             default:
-                throw new ArgumentOutOfRangeException(nameof(player), player, null);
+                throw new ArgumentOutOfRangeException("player", player, null);
         }
     }
 
@@ -57,29 +57,29 @@ public class PlayerControlSchema
 
     private static string Move_HorizontalAxisName(int playerNumber)
     {
-        return $"P{playerNumber}_Horizontal";
+        return string.Format("P{0}_Horizontal", playerNumber);
     }
 
     private static string Move_VerticalAxisName(int playerNumber)
     {
-        return $"P{playerNumber}_Vertical";
+        return string.Format("P{0}_Vertical", playerNumber);
     }
 
     private static string Aim_HorizontalAxisName(int playerNumber)
     {
-        return $"P{playerNumber}_AimHorizontal";
+        return string.Format("P{0}_AimHorizontal", playerNumber);
     }
 
     private static string Aim_VerticalAxisName(int playerNumber)
     {
-        return $"P{playerNumber}_AimVertical";
+        return string.Format("P{0}_AimVertical", playerNumber);
     }
     private static string Fire1_ButtonName(int playerNumber)
     {
-        return $"P{playerNumber}_Fire1";
+        return string.Format("P{0}_Fire1", playerNumber);
     }
     private static string Submit_ButtonName(int playerNumber)
     {
-        return $"P{playerNumber}_Submit";
+        return string.Format("P{0}_Submit", playerNumber);
     }
 }
