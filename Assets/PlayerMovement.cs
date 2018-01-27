@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private Rigidbody2D rb;
 
-    private float TRANSLATE_SPEED = 10;
+    public float TRANSLATE_SPEED = 10;
 
     private Vector2 inputVector;
 
@@ -29,16 +29,16 @@ public class PlayerMovement : MonoBehaviour {
         switch (c)
         {
             case DelayedCommand.Command.UP:
-                inputVector.y = 1;
+                inputVector.y += 1;
                 break;
             case DelayedCommand.Command.DOWN:
-                inputVector.y = -1;
+                inputVector.y += -1;
                 break;
             case DelayedCommand.Command.LEFT:
-                inputVector.x = -1;
+                inputVector.x += -1;
                 break;
             case DelayedCommand.Command.RIGHT:
-                inputVector.x = 1;
+                inputVector.x += 1;
                 break;
             case DelayedCommand.Command.ATTACK:
                 //empty
