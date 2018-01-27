@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour {
+public class PlayerMovement : MonoBehaviour {
 
     private Rigidbody2D rb;
 
@@ -37,17 +37,17 @@ public class Movement : MonoBehaviour {
         switch (c)
         {
             case DelayedCommand.Command.UP:
-                inputForward += 1;
+                inputForward = 1;
                 break;
             case DelayedCommand.Command.DOWN:
-                inputForward -= 1;
+                inputForward = -1;
 
                 break;
             case DelayedCommand.Command.LEFT:
-                inputRotation += 1;
+                inputRotation = 1;
                 break;
             case DelayedCommand.Command.RIGHT:
-                inputRotation -= 1;
+                inputRotation = -1;
                 break;
             case DelayedCommand.Command.ATTACK:
                 //empty
