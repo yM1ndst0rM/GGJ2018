@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameRunning: 1
-  gameOverTimerLength: 5
+  gameOverTimerLength: 2
   children: []
   winner: {fileID: 0}
 --- !u!4 &268698275

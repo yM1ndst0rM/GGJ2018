@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour {
 
     public bool gameRunning = true;
 
-    public float gameOverTimerLength = 2;
+    public float gameOverTimerLength;
     private float gameOverTimer = -1;
 
     public List<GameObject> children;
