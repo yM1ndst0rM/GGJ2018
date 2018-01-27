@@ -5,11 +5,13 @@ using UnityEngine;
 public class FireBullet : MonoBehaviour {
 
 	public GameObject bulletPrefab;
-	public Transform hostTransform;
+	public float firingRateInSeconds;
+	
+	private float lastShotAt;
 
 	// Use this for initialization
 	void Start () {
-		FireABullet();
+
 	}
 	
 	// Update is called once per frame
@@ -17,11 +19,19 @@ public class FireBullet : MonoBehaviour {
 		
 	}
 
-	void FireABullet() {
-		var bullet = (GameObject)Instantiate (
-		    bulletPrefab,
-		    hostTransform.position,
-		    hostTransform.rotation);
+	public void PerformCommand(DelayedCommand.Command c) {
+		if (canFire() && c == DelayedCommand.Command.ATTACK) {
+			FireABullet();
+		}
+	}
+
+	public void FireABullet() {
+		Instantiate(bulletPrefab, this.transform.position, this.transform.rotation);
+		lastShotAt = Time.time;
+	}
+
+	private bool canFire() {
+		return Time.time >= lastShotAt + firingRateInSeconds;
 	}
 
 }
