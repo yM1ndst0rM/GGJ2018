@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour {
 
+    public GameObject deathExplosion;
+
     public bool alive { get; private set; }
     public float life = 1;
     private SpriteRenderer spriteRenderer;
@@ -40,6 +42,9 @@ public class PlayerHealth : MonoBehaviour {
 
         Debug.Log("Player Died");
         alive = false;
-        //todo: detha death anims, sounds etc..    
+
+        GameObject explosion = Instantiate(deathExplosion);
+        explosion.transform.position.Set(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+        explosion.transform.rotation.SetEulerAngles(0.0f, 0.0f, Random.value * 1000.0f);
     }
 }
