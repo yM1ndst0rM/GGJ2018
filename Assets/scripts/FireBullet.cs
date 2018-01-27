@@ -10,7 +10,10 @@ public class FireBullet : MonoBehaviour {
 	private float lastShotAt;
 
 	public void Fire(int type/*ignored*/) {
-	    FireABullet();
+	    if (canFire())
+	    {
+	        FireABullet();
+	    }
 	}
 
 	private void FireABullet() {
