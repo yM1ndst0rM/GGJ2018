@@ -7,13 +7,9 @@ public class PlayerMovement : MonoBehaviour {
 
     private Rigidbody2D rb;
 
-    private float ROTATION_SPEED = 80;
-    private float TRANSLATE_SPEED = 4;
+    private float TRANSLATE_SPEED = 10;
 
-    private Vector2 forwardVector;
-    private float inputForward = 0;
-    private float inputRotation = 0;
-
+    private Vector2 inputVector;
 
     // Use this for initialization
     void Start () {
@@ -23,13 +19,9 @@ public class PlayerMovement : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        forwardVector.Set(transform.up.x, transform.up.y);
-        rb.velocity = forwardVector * inputForward * TRANSLATE_SPEED;
+        rb.velocity = inputVector * TRANSLATE_SPEED;
 
-        rb.angularVelocity = inputRotation * ROTATION_SPEED;
-
-        inputRotation = 0;
-        inputForward = 0;
+        inputVector.Set(0, 0);
     }
 
     public void PerformCommand(DelayedCommand.Command c)
@@ -37,17 +29,16 @@ public class PlayerMovement : MonoBehaviour {
         switch (c)
         {
             case DelayedCommand.Command.UP:
-                inputForward = 1;
+                inputVector.y = 1;
                 break;
             case DelayedCommand.Command.DOWN:
-                inputForward = -1;
-
+                inputVector.y = -1;
                 break;
             case DelayedCommand.Command.LEFT:
-                inputRotation = 1;
+                inputVector.x = -1;
                 break;
             case DelayedCommand.Command.RIGHT:
-                inputRotation = -1;
+                inputVector.x = 1;
                 break;
             case DelayedCommand.Command.ATTACK:
                 //empty
