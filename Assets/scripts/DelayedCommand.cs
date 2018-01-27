@@ -9,66 +9,100 @@ using UnityEngine.Events;
 public class DelayedCommand : MonoBehaviour
 {
     [System.Serializable]
-    public class CommandEvent : UnityEvent<Command>
+    public class DirectionalCommandEvent : UnityEvent<Vector2>
     {
     }
 
-    public KeyCode Up;
-    public KeyCode Down;
-    public KeyCode Left;
-    public KeyCode Right;
-    public KeyCode Attack;
-    public CommandEvent CommandEmmitter;
+    [System.Serializable]
+    public class AttackCommandEvent : UnityEvent<int>
+    {
+    }
+
+    public DirectionalCommandEvent MovementEmitter;
+    public DirectionalCommandEvent AimEmitter;
+    public AttackCommandEvent AttackEmitter;
     public float InputCommandDelay;
 
-    public enum Command
+
+    public interface IInputEvent
     {
-        UP,
-        DOWN,
-        LEFT,
-        RIGHT,
+        float Timestamp { get; }
+        CommandType CommandType { get; }
+    }
+
+    public struct DirectionalInputEvent : IInputEvent
+    {
+        public float Timestamp { get; set; }
+        public CommandType CommandType { get; set; }
+        public Vector2 Param { get; set; }
+    }
+
+    public struct IntInputEvent : IInputEvent
+    {
+        public float Timestamp { get; set; }
+        public CommandType CommandType { get; set; }
+        public int Param { get; set; }
+    }
+
+    public enum CommandType
+    {
+        MOVE,
+        AIM,
         ATTACK
     }
 
-    private struct InputEvent
-    {
-        public float Timestamp { get; set; }
-        public Command Type { get; set; }
-    }
 
-    private List<InputEvent> _inputs = new List<InputEvent>();
+    private List<IInputEvent> _inputs = new List<IInputEvent>();
 	
 	// Update is called once per frame
 	void Update () {
 	    var now = Time.time;
-	    if (Input.GetKey(Up))
+	    var horizontal = Input.GetAxis("Horizontal");
+	    var vertical = Input.GetAxis("Vertical");
+	    var aimHorizontal = Input.GetAxis("Horizontal");
+        var aimVertical = Input.GetAxis("Vertical");
+
+	    var moveVec2 = new Vector2(horizontal, vertical);
+	    var aimVec2 = new Vector2(aimHorizontal, aimVertical);
+
+	    if (moveVec2.magnitude > 0)
 	    {
-	        _inputs.Add(new InputEvent{Timestamp = now + InputCommandDelay, Type = Command.UP});
+	        _inputs.Add(new DirectionalInputEvent{CommandType = CommandType.MOVE, Timestamp = Time.time + InputCommandDelay, Param = moveVec2});
 	    }
 
-	    if (Input.GetKey(Left))
+	    if (aimVec2.magnitude > 0)
 	    {
-	        _inputs.Add(new InputEvent { Timestamp = now + InputCommandDelay, Type = Command.LEFT });
+	        _inputs.Add(new DirectionalInputEvent { CommandType = CommandType.AIM, Timestamp = Time.time + InputCommandDelay, Param = aimVec2 });
 	    }
 
-	    if (Input.GetKey(Down))
-	    {
-	        _inputs.Add(new InputEvent { Timestamp = now + InputCommandDelay, Type = Command.DOWN });
-	    }
 
-	    if (Input.GetKey(Right))
+        if (Input.GetKey("Fire1"))
 	    {
-	        _inputs.Add(new InputEvent { Timestamp = now + InputCommandDelay, Type = Command.RIGHT });
-	    }
-
-	    if (Input.GetKey(Attack))
-	    {
-	        _inputs.Add(new InputEvent { Timestamp = now + InputCommandDelay, Type = Command.ATTACK });
+	        _inputs.Add(new IntInputEvent { CommandType = CommandType.ATTACK, Timestamp = Time.time + InputCommandDelay, Param = 1 });
 	    }
 
         foreach (var inputEvent in _inputs.Where(e => e.Timestamp < now))
         {
-            CommandEmmitter.Invoke(inputEvent.Type);
+            var directionalInputEvent = inputEvent as DirectionalInputEvent?;
+            if (directionalInputEvent.HasValue)
+            {
+                if (directionalInputEvent.Value.CommandType == CommandType.MOVE)
+                {
+                    MovementEmitter.Invoke(directionalInputEvent.Value.Param);
+                }else if (directionalInputEvent.Value.CommandType == CommandType.AIM)
+                {
+                    AimEmitter.Invoke(directionalInputEvent.Value.Param);
+                }
+            }
+
+            var intInputEvent = inputEvent as IntInputEvent?;
+            if (intInputEvent.HasValue)
+            {
+                if (intInputEvent.Value.CommandType == CommandType.ATTACK)
+                {
+                    AttackEmitter.Invoke(intInputEvent.Value.Param);
+                }
+            }
         }
 	    _inputs.RemoveAll(e => e.Timestamp < now);
 	}
