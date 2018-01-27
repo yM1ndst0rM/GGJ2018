@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114842016992738450}
   - component: {fileID: 61439514654781748}
   - component: {fileID: 114554635261932526}
+  - component: {fileID: 114737884691551816}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -101,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74db65a00e5d464e833ea8023cc22e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TRANSLATE_SPEED: 2
+  TRANSLATE_SPEED: 4
 --- !u!114 &114554635261932526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,7 +114,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35284485e9e77b14b9c6b26824781f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 1
+  life: 3
+--- !u!114 &114737884691551816
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1186855232455428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff01923d0e58f41779340d2abd68e529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1181194578103952, guid: 95b766d508fd24608b9a289dfa7eda9e,
+    type: 2}
+  firingRateInSeconds: 3
 --- !u!114 &114842016992738450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -144,9 +159,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 114737884691551816}
+        m_MethodName: PerformCommand
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: DelayedCommand+CommandEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  InputCommandDelay: 2
+  InputCommandDelay: 1
 --- !u!212 &212270482078578756
 SpriteRenderer:
   m_ObjectHideFlags: 1

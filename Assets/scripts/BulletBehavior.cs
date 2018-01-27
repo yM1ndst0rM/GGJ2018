@@ -19,10 +19,18 @@ public class BulletBehavior : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
-		if (collider.gameObject.name.Contains("Player") && !gameObject.name.Contains(collider.gameObject.tag)) {
+		if (HitsMountain(collider.gameObject.tag) || HitsPlayer(collider.gameObject.tag)) {
 			Hit(collider.gameObject);
 			Destroy(gameObject);
 		}
+	}
+
+	private bool HitsMountain(string tag) {
+		return tag == "Mountain";
+	}
+
+	private bool HitsPlayer(string tag) {
+		return tag.Contains("Player") && !gameObject.name.Contains(tag);
 	}
 
 	void Hit(GameObject target) {
