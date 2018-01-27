@@ -23,9 +23,9 @@ GameObject:
   - component: {fileID: 50131383051777084}
   - component: {fileID: 114189790892019766}
   - component: {fileID: 114842016992738450}
-  - component: {fileID: 61439514654781748}
   - component: {fileID: 114554635261932526}
   - component: {fileID: 95595104968737256}
+  - component: {fileID: 58338535308993670}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player1
@@ -127,8 +127,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61439514654781748
-BoxCollider2D:
+--- !u!58 &58338535308993670
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -140,18 +140,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10, y: 10}
-    newSize: {x: 0.24, y: 0.24}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.24, y: 0.24}
-  m_EdgeRadius: 0
+  m_Radius: 3.5
 --- !u!95 &95595104968737256
 Animator:
   serializedVersion: 3
