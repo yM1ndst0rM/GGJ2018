@@ -22,7 +22,7 @@ public class PlayerHealth : MonoBehaviour {
 
         life -= damage;
 
-        if (life < 0)
+        if (life <= 0)
         {
             triggerDeath();
         }
