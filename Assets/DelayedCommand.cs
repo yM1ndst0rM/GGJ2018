@@ -68,5 +68,6 @@ public class DelayedCommand : MonoBehaviour
         {
             CommandEmmitter.Invoke(inputEvent.Type);
         }
-    }
+	    _inputs.RemoveAll(e => e.Timestamp < now);
+	}
 }
