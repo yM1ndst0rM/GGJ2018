@@ -9,23 +9,14 @@ public class FireBullet : MonoBehaviour {
 	
 	private float lastShotAt;
 
-	// Use this for initialization
-	void Start () {
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public void Fire(int type/*ignored*/) {
+	    if (canFire())
+	    {
+	        FireABullet();
+	    }
 	}
 
-	public void PerformCommand(DelayedCommand.Command c) {
-		if (canFire() && c == DelayedCommand.Command.ATTACK) {
-			FireABullet();
-		}
-	}
-
-	public void FireABullet() {
+	private void FireABullet() {
 		var bullet = Instantiate(bulletPrefab, this.transform.position, this.transform.rotation);
 		bullet.name = bullet.name + '#' + gameObject.tag;
 		lastShotAt = Time.time;

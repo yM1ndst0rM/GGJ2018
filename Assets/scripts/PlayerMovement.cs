@@ -29,27 +29,8 @@ public class PlayerMovement : MonoBehaviour {
         inputVector.Set(0, 0);
     }
 
-    public void PerformCommand(DelayedCommand.Command c)
+    public void Move(Vector2 direction)
     {
-        switch (c)
-        {
-            case DelayedCommand.Command.UP:
-                inputVector.y += 1;
-                break;
-            case DelayedCommand.Command.DOWN:
-                inputVector.y += -1;
-                break;
-            case DelayedCommand.Command.LEFT:
-                inputVector.x += -1;
-                break;
-            case DelayedCommand.Command.RIGHT:
-                inputVector.x += 1;
-                break;
-            case DelayedCommand.Command.ATTACK:
-                //empty
-                break;
-            default:
-                throw new ArgumentOutOfRangeException("c", c, null);
-        }
+        inputVector = direction;
     }
 }
