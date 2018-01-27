@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameRunning: 1
-  gameOverTimerLength: 2
+  gameOverTimerLength: 3
   children: []
   winner: {fileID: 0}
 --- !u!4 &268698275
@@ -532,7 +532,8 @@ Prefab:
       propertyPath: m_TagString
       value: Player2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: f74dd4c38a252294fbe0c8608567e3ec, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &968234307
@@ -745,7 +746,8 @@ Prefab:
       propertyPath: m_TagString
       value: Player1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: f74dd4c38a252294fbe0c8608567e3ec, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1276181474

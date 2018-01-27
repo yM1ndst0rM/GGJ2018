@@ -6,7 +6,6 @@ public class PlayerHealth : MonoBehaviour {
 
     public bool alive { get; private set; }
     public float life = 1;
-
     private SpriteRenderer spriteRenderer;
 
     // Use this for initialization
@@ -24,11 +23,11 @@ public class PlayerHealth : MonoBehaviour {
 
         if (life <= 0)
         {
-            triggerDeath();
+            TriggerDeath();
         }
     }
 
-    private void triggerDeath()
+    private void TriggerDeath()
     {
         if (!alive) return;
 
