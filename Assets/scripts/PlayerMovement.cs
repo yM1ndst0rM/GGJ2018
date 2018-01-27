@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour {
         rb.velocity = inputVector * TRANSLATE_SPEED;
         if (inputVector.magnitude > 0)
         {
-            transform.up = inputVector;
+            transform.up = Vector3.Lerp(transform.up, inputVector, Time.deltaTime * 15);
         }
 
         inputVector.Set(0, 0);
