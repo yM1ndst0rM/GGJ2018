@@ -11,7 +11,7 @@ public class ScreenTransitions : MonoBehaviour {
 	private static string ZOOMING_IN = "ZOOMING_IN";
 
 	Camera camera;
-	public string state;
+	public string state = ZOOMED_IN;
 
 	// Use this for initialization
 	void Start () {
@@ -23,8 +23,8 @@ public class ScreenTransitions : MonoBehaviour {
 		if (state == ZOOMING_OUT) {
 			camera.orthographicSize += 0.2f;
 			if (camera.orthographicSize > 20) {
+				camera.orthographicSize = 20;
 				state = ZOOMED_OUT;
-				SceneManager.LoadScene("StartScene");
 			}
 		}
 		if (state == ZOOMING_IN) {
@@ -36,10 +36,28 @@ public class ScreenTransitions : MonoBehaviour {
 		}
 	}
 
-	public void ExitSettingsOnClick() {
+	public void ZoomOut() {
 		if (state == ZOOMED_IN) {
 			state = ZOOMING_OUT;
 		}
+	}
+
+	public void ZoomIn() {
+		if (state == ZOOMED_OUT) {
+			state = ZOOMING_IN;
+		}
+	}
+
+	public void ToGame() {
+		SceneManager.LoadScene("StartScene");
+	}
+
+	public void ToSettings() {
+		SceneManager.LoadScene("SettingsScene");
+	}
+
+	public void ToTitle() {
+		SceneManager.LoadScene("TitleScene");
 	}
 
 }
