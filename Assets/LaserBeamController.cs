@@ -24,14 +24,19 @@ public class LaserBeamController : MonoBehaviour
 
     public void Shoot()
     {
-        IsLockedOut = true;
-        GetComponent<Animator>().SetTrigger("Charge Laser");
+        Debug.Log(nameof(Shoot));
+        if (!IsLockedOut)
+        {
+            IsLockedOut = true;
+            GetComponent<Animator>().SetTrigger("Charge Laser");
+        }
     }
 
     public void OnLaserCharged()
     {
+        Debug.Log(nameof(OnLaserCharged));
         IsFollowing = false;
-        var hit = Physics2D.Raycast(transform.position, transform.up, float.PositiveInfinity, ~LayerMask.NameToLayer("Ignored By Weapons"));
+        var hit = Physics2D.Raycast(SourceObjectTransform.position, SourceObjectTransform.up, float.PositiveInfinity, ~(1 << LayerMask.NameToLayer("Ignored By Weapons")));
         if (hit)
         {
             var impactedByLaserHit = hit.collider.GetComponent<IImpactedByLaserHit>();
@@ -40,8 +45,7 @@ public class LaserBeamController : MonoBehaviour
                 impactedByLaserHit.OnLaserImpact(SourceObjectTransform.gameObject);
             }
 
-            LaserBeam.transform.localScale.Set(hit.distance, LaserBeam.transform.localScale.y,
-                LaserBeam.transform.localScale.z);
+            upscaleLazer(hit.distance);
 
             ImpactEffect.transform.position = hit.point;
 
@@ -50,8 +54,7 @@ public class LaserBeamController : MonoBehaviour
         else
         {
             //assuming 3000 length is enough
-            LaserBeam.transform.localScale.Set(3000, LaserBeam.transform.localScale.y,
-                LaserBeam.transform.localScale.z);
+            upscaleLazer(3000);
         }
 
         GetComponent<Animator>().SetTrigger("Fire Laser");
@@ -59,9 +62,27 @@ public class LaserBeamController : MonoBehaviour
 
     public void OnLaserFired()
     {
-        LaserBeam.transform.localScale.Set(0, LaserBeam.transform.localScale.y,
-            LaserBeam.transform.localScale.z);
+        Debug.Log(nameof(OnLaserFired));
+        downscaleLazer();
         IsFollowing = true;
         IsLockedOut = false;
+    }
+
+    public void upscaleLazer(float targetSize)
+    {
+       Vector3 rescale = LaserBeam.transform.localScale;
+       rescale.x = targetSize;
+
+       LaserBeam.transform.localScale = rescale;
+
+    }
+
+    public void downscaleLazer()
+    {
+        Vector3 rescale = LaserBeam.transform.localScale;
+
+        rescale.x = 1;
+
+        LaserBeam.transform.localScale = rescale;
     }
 }
