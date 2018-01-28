@@ -2228,7 +2228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef933954a7fd421b8b36a1b72e6b870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomStep: 2
+  zoomStep: 5
 --- !u!4 &1289005091 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4350589083645438, guid: cbd2182b3ae8ae4438a8bbcef36c572f,
@@ -2294,7 +2294,7 @@ Prefab:
     - target: {fileID: 212270482078578756, guid: f74dd4c38a252294fbe0c8608567e3ec,
         type: 2}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 212270482078578756, guid: f74dd4c38a252294fbe0c8608567e3ec,
         type: 2}
@@ -2304,7 +2304,7 @@ Prefab:
     - target: {fileID: 212270482078578756, guid: f74dd4c38a252294fbe0c8608567e3ec,
         type: 2}
       propertyPath: m_Color.b
-      value: 0.46206903
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114842016992738450, guid: f74dd4c38a252294fbe0c8608567e3ec,
         type: 2}
@@ -2402,6 +2402,24 @@ Prefab:
       propertyPath: Target
       value: 
       objectReference: {fileID: 1811017420}
+    - target: {fileID: 212767655011701000, guid: f74dd4c38a252294fbe0c8608567e3ec,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7557faedb39b44d49b7d0588ae232a2d,
+        type: 3}
+    - target: {fileID: 4593522767658734, guid: f74dd4c38a252294fbe0c8608567e3ec, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4593522767658734, guid: f74dd4c38a252294fbe0c8608567e3ec, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4593522767658734, guid: f74dd4c38a252294fbe0c8608567e3ec, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f74dd4c38a252294fbe0c8608567e3ec, type: 2}
   m_IsPrefabParent: 0

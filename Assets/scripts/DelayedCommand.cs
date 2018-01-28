@@ -54,7 +54,31 @@ public class DelayedCommand : MonoBehaviour
 
 
     private readonly List<IInputEvent> _inputs = new List<IInputEvent>();
-	
+
+    void Start()
+    {
+        switch (Player)
+        {
+            case PlayerControlSchema.Player.P1:
+                GetComponent<Animator>().SetInteger("Player Number", 1);
+                break;
+            case PlayerControlSchema.Player.P2:
+                GetComponent<Animator>().SetInteger("Player Number", 2);
+
+                break;
+            case PlayerControlSchema.Player.P3:
+                GetComponent<Animator>().SetInteger("Player Number", 3);
+
+                break;
+            case PlayerControlSchema.Player.P4:
+                GetComponent<Animator>().SetInteger("Player Number", 4);
+
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+
 	// Update is called once per frame
 	void Update () {
 	    var now = Time.time;
