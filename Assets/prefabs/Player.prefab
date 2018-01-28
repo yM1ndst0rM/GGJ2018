@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 95595104968737256}
   - component: {fileID: 58338535308993670}
   - component: {fileID: 114673173320197616}
+  - component: {fileID: 114697080142516316}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player1
@@ -197,6 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35284485e9e77b14b9c6b26824781f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GettingHit: {fileID: 8300000, guid: d8891ca4f83f84341b103e1e0fc3f6f0, type: 3}
   deathExplosion: {fileID: 0}
   life: 3
 --- !u!114 &114673173320197616
@@ -226,6 +228,18 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114697080142516316
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1186855232455428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32a002f237acdff408e5940a580e8b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
 --- !u!114 &114842016992738450
 MonoBehaviour:
   m_ObjectHideFlags: 1

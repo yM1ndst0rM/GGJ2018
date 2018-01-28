@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour, IImpactedByLaserHit {
+public class PlayerHealth : MonoBehaviour, IImpactedByLaserHit
+{
 
+    public AudioClip GettingHit;
     public GameObject deathExplosion;
 
     public bool alive { get; private set; }
@@ -19,6 +21,7 @@ public class PlayerHealth : MonoBehaviour, IImpactedByLaserHit {
 
     public void DamagePlayer(float damage)
     {
+        GetComponent<AudioEvent>().PlayOneShot(GettingHit);
         if (damage < 0 || !alive) return;
 
         life -= damage;

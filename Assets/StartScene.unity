@@ -999,6 +999,11 @@ Prefab:
       propertyPath: SourceObjectPosition
       value: 
       objectReference: {fileID: 395087782}
+    - target: {fileID: 114552613642173772, guid: 37cbf2a666f19084d820ad6cd4fedda2,
+        type: 2}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 1811017420}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37cbf2a666f19084d820ad6cd4fedda2, type: 2}
   m_IsPrefabParent: 0
@@ -1160,6 +1165,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114697080142516316, guid: f74dd4c38a252294fbe0c8608567e3ec,
+        type: 2}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 1811017420}
     - target: {fileID: 114842016992738450, guid: f74dd4c38a252294fbe0c8608567e3ec,
         type: 2}
       propertyPath: AttackEmitter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1913,16 +1923,19 @@ Prefab:
       propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114506581706085362, guid: d239bc5aa8c77e940a620c53663f3dd9,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: OnTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1811017420}
-    - target: {fileID: 114506581706085362, guid: d239bc5aa8c77e940a620c53663f3dd9,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: OnTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlayOneShot
       objectReference: {fileID: 0}
+    - target: {fileID: 114764243261651298, guid: d239bc5aa8c77e940a620c53663f3dd9,
+        type: 2}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 1811017420}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d239bc5aa8c77e940a620c53663f3dd9, type: 2}
   m_IsPrefabParent: 0
@@ -2194,6 +2207,11 @@ Prefab:
       propertyPath: AttackEmitter.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114697080142516316, guid: f74dd4c38a252294fbe0c8608567e3ec,
+        type: 2}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 1811017420}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f74dd4c38a252294fbe0c8608567e3ec, type: 2}
   m_IsPrefabParent: 0
@@ -2236,9 +2254,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114506581706085362, guid: d239bc5aa8c77e940a620c53663f3dd9,
+    - target: {fileID: 114764243261651298, guid: d239bc5aa8c77e940a620c53663f3dd9,
         type: 2}
-      propertyPath: OnTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: Target
       value: 
       objectReference: {fileID: 1811017420}
     - target: {fileID: 1480655822141102, guid: d239bc5aa8c77e940a620c53663f3dd9, type: 2}
@@ -2768,6 +2786,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114552613642173772, guid: 37cbf2a666f19084d820ad6cd4fedda2,
+        type: 2}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 1811017420}
     - target: {fileID: 1281654101602134, guid: 37cbf2a666f19084d820ad6cd4fedda2, type: 2}
       propertyPath: m_Name
       value: Dust Particles for Player1

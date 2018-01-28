@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4620177878120210}
   - component: {fileID: 95443501542541104}
   - component: {fileID: 114146841354342042}
-  - component: {fileID: 114506581706085362}
+  - component: {fileID: 114764243261651298}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -163,7 +163,7 @@ MonoBehaviour:
   SourceObjectTransform: {fileID: 0}
   LaserBeam: {fileID: 1865043557605880}
   ImpactEffect: {fileID: 1758802711261218}
---- !u!114 &114506581706085362
+--- !u!114 &114764243261651298
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -171,26 +171,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1480655822141102}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e7819370b9ee194dbc56088e9918930, type: 3}
+  m_Script: {fileID: 11500000, guid: 32a002f237acdff408e5940a580e8b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTriggered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: d8891ca4f83f84341b103e1e0fc3f6f0,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  Target: {fileID: 0}
 --- !u!212 &212019060029146176
 SpriteRenderer:
   m_ObjectHideFlags: 1
