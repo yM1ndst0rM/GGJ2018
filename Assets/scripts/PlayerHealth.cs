@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour {
+public class PlayerHealth : MonoBehaviour, IImpactedByLaserHit {
 
     public GameObject deathExplosion;
 
@@ -46,5 +46,10 @@ public class PlayerHealth : MonoBehaviour {
         GameObject explosion = Instantiate(deathExplosion);
         explosion.transform.position.Set(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         explosion.transform.rotation.SetEulerAngles(0.0f, 0.0f, Random.value * 1000.0f);
+    }
+
+    public void OnLaserImpact(GameObject source)
+    {
+        DamagePlayer(1);
     }
 }
