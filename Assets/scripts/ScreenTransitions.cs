@@ -5,59 +5,104 @@ using UnityEngine.SceneManagement;
 
 public class ScreenTransitions : MonoBehaviour {
 
-	private static string ZOOMED_OUT = "ZOOMED_OUT";
-	private static string ZOOMED_IN = "ZOOMED_IN";
+	private static string READY = "READY";
 	private static string ZOOMING_OUT = "ZOOMING_OUT";
 	private static string ZOOMING_IN = "ZOOMING_IN";
 
+	float zoomStep = 5;
+	float defaultCameraSize;
+	float durationInSeconds = 2;
+	float animationStartTime = 0;
+	float fromSize;
+	float toSize;
+
 	Camera camera;
-	public string state = ZOOMED_IN;
+	string state;
+	string nextScene;
+
+	void Awake() {
+		camera = GetComponent<Camera>();
+		defaultCameraSize = camera.orthographicSize;
+	}
 
 	// Use this for initialization
 	void Start () {
-		camera = GetComponent<Camera>();
+		state = READY;
+		ZoomIn();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (state == ZOOMING_OUT) {
-			camera.orthographicSize += 0.2f;
-			if (camera.orthographicSize > 20) {
-				camera.orthographicSize = 20;
-				state = ZOOMED_OUT;
+		Debug.Log("state is " + state);
+		if (state == ZOOMING_OUT || state == ZOOMING_IN) {
+			var elapsed = Mathf.Clamp(Time.time - animationStartTime, 0, 1);
+			camera.orthographicSize = Mathf.Lerp(fromSize, toSize, state == ZOOMING_OUT ? CircleInInterp(elapsed): CircleOutInterp(elapsed));
+			if (elapsed >= 1) {
+				state = READY;
 			}
 		}
-		if (state == ZOOMING_IN) {
-			camera.orthographicSize -= 0.1f;
-			if (camera.orthographicSize < 5) {
-				camera.orthographicSize = 5;
-				state = ZOOMED_IN;
-			}
+		else if (state == READY) {
+			SceneManager.LoadScene(nextScene);
 		}
 	}
 
 	public void ZoomOut() {
-		if (state == ZOOMED_IN) {
+		if (state == READY) {
+			fromSize = defaultCameraSize + zoomStep;
+			toSize = defaultCameraSize;
+			animationStartTime = Time.time;
 			state = ZOOMING_OUT;
 		}
 	}
 
 	public void ZoomIn() {
-		if (state == ZOOMED_OUT) {
+		if (state == READY) {
+			fromSize = defaultCameraSize + zoomStep;
+			toSize = defaultCameraSize;
+			animationStartTime = Time.time;
 			state = ZOOMING_IN;
 		}
 	}
 
 	public void ToGame() {
-		SceneManager.LoadScene("StartScene");
+		TransitionToScene("StartScene", true);
 	}
 
 	public void ToSettings() {
-		SceneManager.LoadScene("SettingsScene");
+		TransitionToScene("SettingsScene", true);
 	}
 
 	public void ToTitle() {
-		SceneManager.LoadScene("TitleScene");
+		TransitionToScene("TitleScene", false);
+	}
+
+	private void TransitionToScene(string sceneName, bool fromTitle) {
+		nextScene = sceneName;
+		if (fromTitle) {
+			ZoomInAgain();
+		} else {
+			ZoomOut();
+		}
+	}
+
+	private void ZoomInAgain() {
+		if (state == READY) {
+			fromSize = defaultCameraSize;
+			toSize = defaultCameraSize - zoomStep/2f;
+			animationStartTime = Time.time;
+			state = ZOOMING_IN;
+		}
+	}
+
+	private float CircleOutInterp(float a) {
+		a--;
+		return Mathf.Sqrt(1 - a * a);
+		
+	}
+
+	private float CircleInInterp(float a) {
+		return Mathf.Sqrt(1 - a * a);
 	}
 
 }
+ 
