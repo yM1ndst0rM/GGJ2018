@@ -24,7 +24,6 @@ public class LaserBeamController : MonoBehaviour
 
     public void Shoot()
     {
-        Debug.Log(nameof(Shoot));
         if (!IsLockedOut)
         {
             IsLockedOut = true;
@@ -34,7 +33,6 @@ public class LaserBeamController : MonoBehaviour
 
     public void OnLaserCharged()
     {
-        Debug.Log(nameof(OnLaserCharged));
         IsFollowing = false;
         var hit = Physics2D.Raycast(SourceObjectTransform.position, SourceObjectTransform.up, float.PositiveInfinity, ~(1 << LayerMask.NameToLayer("Ignored By Weapons")));
         if (hit)
@@ -62,7 +60,6 @@ public class LaserBeamController : MonoBehaviour
 
     public void OnLaserFired()
     {
-        Debug.Log(nameof(OnLaserFired));
         downscaleLazer();
         IsFollowing = true;
         IsLockedOut = false;
