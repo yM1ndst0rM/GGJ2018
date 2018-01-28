@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour {
 
         inputVector.Normalize();
         rb.velocity = inputVector * TRANSLATE_SPEED;
+        GetComponent<Animator>().SetFloat("Speed", rb.velocity.magnitude);
         if (inputVector.magnitude > 0)
         {
             transform.up = Vector3.Lerp(transform.up, inputVector, Time.deltaTime * 15);
