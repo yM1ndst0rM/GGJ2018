@@ -9,7 +9,7 @@ public class ScreenTransitions : MonoBehaviour {
 	private static string ZOOMING_OUT = "ZOOMING_OUT";
 	private static string ZOOMING_IN = "ZOOMING_IN";
 
-	float zoomStep = 5;
+	public float zoomStep = 5;
 	float defaultCameraSize;
 	float durationInSeconds = 2;
 	float animationStartTime = 0;
