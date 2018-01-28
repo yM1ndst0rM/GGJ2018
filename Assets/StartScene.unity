@@ -1952,7 +1952,7 @@ Prefab:
     - target: {fileID: 114842016992738450, guid: f74dd4c38a252294fbe0c8608567e3ec,
         type: 2}
       propertyPath: Player
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114842016992738450, guid: f74dd4c38a252294fbe0c8608567e3ec,
         type: 2}
@@ -2091,14 +2091,6 @@ Prefab:
       propertyPath: SourceObjectTransform
       value: 
       objectReference: {fileID: 870858913}
-    - target: {fileID: 4620177878120210, guid: d239bc5aa8c77e940a620c53663f3dd9, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4620177878120210, guid: d239bc5aa8c77e940a620c53663f3dd9, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d239bc5aa8c77e940a620c53663f3dd9, type: 2}
   m_IsPrefabParent: 0
