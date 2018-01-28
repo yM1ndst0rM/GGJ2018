@@ -45,10 +45,7 @@ public class PlayerHealth : MonoBehaviour, IImpactedByLaserHit
 
         Debug.Log("Player Died");
         alive = false;
-
-        GameObject explosion = Instantiate(deathExplosion);
-        explosion.transform.position.Set(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-        explosion.transform.rotation.SetEulerAngles(0.0f, 0.0f, Random.value * 1000.0f);
+        GetComponent<Animator>().SetTrigger("Death");
     }
 
     public void OnLaserImpact(GameObject source)
