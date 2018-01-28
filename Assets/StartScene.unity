@@ -2233,36 +2233,20 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1480655822141102, guid: d239bc5aa8c77e940a620c53663f3dd9, type: 2}
+      propertyPath: m_Name
+      value: Laser_P1
+      objectReference: {fileID: 0}
     - target: {fileID: 114764243261651298, guid: d239bc5aa8c77e940a620c53663f3dd9,
         type: 2}
       propertyPath: Target
       value: 
       objectReference: {fileID: 1811017420}
-    - target: {fileID: 1480655822141102, guid: d239bc5aa8c77e940a620c53663f3dd9, type: 2}
-      propertyPath: m_Name
-      value: Laser_P1
-      objectReference: {fileID: 0}
     - target: {fileID: 114146841354342042, guid: d239bc5aa8c77e940a620c53663f3dd9,
         type: 2}
       propertyPath: SourceObjectTransform
       value: 
       objectReference: {fileID: 870858913}
-    - target: {fileID: 4903011611043790, guid: d239bc5aa8c77e940a620c53663f3dd9, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4903011611043790, guid: d239bc5aa8c77e940a620c53663f3dd9, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4903011611043790, guid: d239bc5aa8c77e940a620c53663f3dd9, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4903011611043790, guid: d239bc5aa8c77e940a620c53663f3dd9, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d239bc5aa8c77e940a620c53663f3dd9, type: 2}
   m_IsPrefabParent: 0
