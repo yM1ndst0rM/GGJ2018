@@ -39,7 +39,7 @@ public class ScreenTransitions : MonoBehaviour {
 				state = READY;
 			}
 		}
-		else if (state == READY) {
+		else if (state == READY && nextScene != null) {
 			SceneManager.LoadScene(nextScene);
 		}
 	}
