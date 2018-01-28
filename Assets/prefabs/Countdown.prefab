@@ -84,6 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4202694013152976}
   - component: {fileID: 95883740087029518}
+  - component: {fileID: 114092567117730082}
   m_Layer: 0
   m_Name: Countdown
   m_TagString: Untagged
@@ -177,6 +178,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114092567117730082
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1727874497882028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db5282cac2960f94d90151681134d533, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 4
 --- !u!212 &212056100602119264
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -3211,6 +3211,48 @@ Transform:
   m_PrefabParentObject: {fileID: 4350589083645438, guid: cbd2182b3ae8ae4438a8bbcef36c572f,
     type: 2}
   m_PrefabInternal: {fileID: 1936250651}
+--- !u!1001 &1981874650
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4202694013152976, guid: 1cb3eac440595fe4b85da2c0002a5e52, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202694013152976, guid: 1cb3eac440595fe4b85da2c0002a5e52, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202694013152976, guid: 1cb3eac440595fe4b85da2c0002a5e52, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202694013152976, guid: 1cb3eac440595fe4b85da2c0002a5e52, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202694013152976, guid: 1cb3eac440595fe4b85da2c0002a5e52, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202694013152976, guid: 1cb3eac440595fe4b85da2c0002a5e52, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202694013152976, guid: 1cb3eac440595fe4b85da2c0002a5e52, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202694013152976, guid: 1cb3eac440595fe4b85da2c0002a5e52, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 1cb3eac440595fe4b85da2c0002a5e52, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &1995172216 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4255586365954268, guid: 10b13cbcc88ce47e9a16e451517ec375,
