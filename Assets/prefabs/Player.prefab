@@ -30,7 +30,7 @@ GameObject:
   - component: {fileID: 114697080142516316}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player1
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 114948258671639920}
   m_Layer: 0
   m_Name: Weapon
-  m_TagString: Player1
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1186855232455428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.75, y: 9.1, z: -3}
+  m_LocalPosition: {x: 23.7, y: -14.2, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4542165315173038}
@@ -199,7 +199,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GettingHit: {fileID: 8300000, guid: d8891ca4f83f84341b103e1e0fc3f6f0, type: 3}
-  deathExplosion: {fileID: 0}
+  deathExplosion: {fileID: 1207714834730770, guid: 698778494f7fda64dada542a0a17d478,
+    type: 2}
   life: 3
 --- !u!114 &114673173320197616
 MonoBehaviour:
@@ -251,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 895e5a2f5715518408b20341106cdfa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: 0
+  Player: 1
   MovementEmitter:
     m_PersistentCalls:
       m_Calls:
@@ -347,7 +348,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fbf195f81bde67d46bd6963abb006e40, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 72a4bfcd7e505b347bc9dd6c5b54a92a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
