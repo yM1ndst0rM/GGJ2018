@@ -9,9 +9,8 @@ public class ScreenTransitions : MonoBehaviour {
 	private static string ZOOMING_OUT = "ZOOMING_OUT";
 	private static string ZOOMING_IN = "ZOOMING_IN";
 
-	float zoomStep = 5;
+	public float zoomStep = 5;
 	float defaultCameraSize;
-	float durationInSeconds = 2;
 	float animationStartTime = 0;
 	float fromSize;
 	float toSize;
@@ -33,7 +32,6 @@ public class ScreenTransitions : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log("state is " + state);
 		if (state == ZOOMING_OUT || state == ZOOMING_IN) {
 			var elapsed = Mathf.Clamp(Time.time - animationStartTime, 0, 1);
 			camera.orthographicSize = Mathf.Lerp(fromSize, toSize, state == ZOOMING_OUT ? CircleInInterp(elapsed): CircleOutInterp(elapsed));
